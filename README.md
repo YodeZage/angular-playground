@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  The Angular playground is the project to test and learn Angular new features and design idea
+  The Angular playground is the project to testing and learning Angular new features and design ideas
 </p>
 
 <hr>
