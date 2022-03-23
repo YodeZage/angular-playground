@@ -1,0 +1,27 @@
+@import "../../../../assets/colors.scss";
+
+nav {
+  padding: 8px 16px;
+  background-color: $primary-color;
+
+  a {
+    text-decoration-line: none;
+  }
+}
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+
+  .nav-logo {
+    height: 26px;
+    margin: 0 5px 0 0;
+  }
+
+  .nav-logo-text {
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+}
+
+

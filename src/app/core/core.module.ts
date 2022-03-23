@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import {SharedModule} from '@ap/shared/shared.module';
+
 import {
   HeaderComponent,
   FooterComponent
@@ -12,7 +14,8 @@ import {
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent,

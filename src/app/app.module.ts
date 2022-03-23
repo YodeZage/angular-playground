@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {CoreModule} from './core/core.module';
+import {CoreModule} from "@ap/core/core.module";
+import {SharedModule} from '@ap/shared/shared.module';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 
@@ -15,8 +16,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    CoreModule
+    CoreModule,
+    SharedModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
