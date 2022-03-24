@@ -1,11 +1,12 @@
-<ap-header></ap-header>
+<ap-header (onNavSideIcon)="sidenav.toggle()"></ap-header>
 
 <div class="grid-container-full">
   <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened>Sidenav content</mat-sidenav>
+    <mat-sidenav #sidenav mode="side" opened>
+      <ap-side-nav-map [sideNavMapList]="navMapList"></ap-side-nav-map>
+    </mat-sidenav>
     <mat-sidenav-content>
       Main content
-      <button mat-raised-button color="primary" (click)="sidenav.toggle()">Toggle Side Bar</button>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

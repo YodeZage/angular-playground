@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output , OnInit} from '@angular/core';
 
 @Component({
   selector: 'ap-header',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @Output() onNavSideIcon: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleNavSide(): void {
+    this.onNavSideIcon.emit();
   }
 
 }

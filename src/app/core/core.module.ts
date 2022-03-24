@@ -5,13 +5,15 @@ import {SharedModule} from '@ap/shared/shared.module';
 
 import {
   HeaderComponent,
-  FooterComponent
+  FooterComponent,
+  SideNavMapComponent
 } from './components';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SideNavMapComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import {
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SideNavMapComponent
   ]
 })
 export class CoreModule { }

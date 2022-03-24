@@ -25,7 +25,8 @@
     "paths": {
       "@ap/core/*": ["src/app/core/*"],
       "@ap/shared/*": ["src/app/shared/*"]
-    }
+    },
+    "strictPropertyInitialization": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
