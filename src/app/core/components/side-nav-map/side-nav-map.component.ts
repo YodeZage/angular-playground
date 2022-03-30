@@ -11,10 +11,12 @@ export class SideNavMapComponent implements OnInit {
 
   @Input() sideNavMapList: INavMap[];
 
+  rippleColor = "#0000000a";
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.sideNavMapList);
+
   }
 
 }

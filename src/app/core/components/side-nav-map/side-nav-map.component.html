@@ -1,1 +1,3 @@
-<p>side-nav-map works!</p>
+<a *ngFor="let link of sideNavMapList" class="side-map-link" href="{{link.path}}">
+  <div matRipple [matRippleColor]="rippleColor" class="side-map-text">{{link.name}}</div>
+</a>

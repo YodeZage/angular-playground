@@ -10,7 +10,7 @@ import {INavMap} from '@ap/shared/interfaces/nav-map';
 export class AppComponent {
 
   navMapList: INavMap[] = [
-    {name: "Basic", path: "/#"}
+    {name: "Basic", path: "/#"},
   ]
 
 }
