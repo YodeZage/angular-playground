@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  readonly poweredBy = "Powered by Zhenkang Yao ©2022-2022.";
+  readonly licenseInfo = "Code licensed under an MIT-style License."
+
   constructor() { }
 
   ngOnInit(): void {

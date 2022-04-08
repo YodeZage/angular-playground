@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import {INavMap} from '@ap/shared/interfaces/nav-map';
+import { NavList } from "@ap/shared/static-values/nav-list";
 
 @Component({
   selector: 'ap-root',
@@ -9,8 +9,6 @@ import {INavMap} from '@ap/shared/interfaces/nav-map';
 })
 export class AppComponent {
 
-  navMapList: INavMap[] = [
-    {name: "Basic", path: "/#"},
-  ]
+  navMapList = NavList;
 
 }
