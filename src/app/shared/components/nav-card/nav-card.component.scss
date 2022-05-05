@@ -1,3 +1,5 @@
+@import "../../../../assets/media-query";
+
 .home-container {
   padding: 40px 60px;
   display: inline-block;
@@ -12,5 +14,19 @@
   &:hover {
     cursor: pointer;
     box-shadow: 0 8px 8px #0a10143d, 0 0 8px #0a10141f;
+  }
+}
+
+
+
+@media only screen and (max-width: $mobile-size) {
+  .home-container {
+    padding: 20px 40px;
+  }
+
+  .nav-card {
+    width: 260px;
+    height: 160px;
+    line-height: 20px;
   }
 }

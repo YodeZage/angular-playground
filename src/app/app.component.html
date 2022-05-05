@@ -1,8 +1,8 @@
-<ap-header (onNavSideIcon)="sidenav.toggle()"></ap-header>
+<div class="page-container">
+  <ap-header class="page-header" (onNavSideIcon)="drawer.toggle()"></ap-header>
 
-<div class="grid-container-full">
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened>
+  <mat-sidenav-container class="page-body" [hasBackdrop]="isXSmall">
+    <mat-sidenav #drawer [mode]="sideNavMode" [opened]="!isXSmall">
       <ap-side-nav-map [sideNavMapList]="navMapList"></ap-side-nav-map>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -10,5 +10,24 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 
-  <ap-footer></ap-footer>
+  <ap-footer class="page-footer"></ap-footer>
 </div>
+
+
+
+<!--This is second way to apply same layout without using any framework
+<div class="page-container2">
+  <div class="page-header2">
+    <ap-header></ap-header>
+  </div>
+
+  <div class="page-body2">
+    <ap-side-nav-map class="side-nav2" [sideNavMapList]="navMapList"></ap-side-nav-map>
+    <div class="body-content2"><router-outlet></router-outlet></div>
+  </div>
+
+  <ap-footer class="page-footer2"></ap-footer>
+</div>
+-->
+
+

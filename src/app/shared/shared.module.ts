@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatRippleModule,
     MatCardModule,
+    LayoutModule,
   ],
   exports: [
     RouterModule,
@@ -30,6 +32,7 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatRippleModule,
     MatCardModule,
+    LayoutModule,
   ]
 })
 export class SharedModule { }

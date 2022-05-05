@@ -10,6 +10,7 @@ const routes: Routes = [
     path: 'animations',
     loadChildren: () => import('./animations/animations.module').then(m => m.AnimationsModule)
   },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

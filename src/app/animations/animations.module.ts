@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AnimationsRoutingModule } from './animations-routing.module';
 import { AnimationsComponent } from './animations.component';
+import { BasicAnimationComponent } from './components/basic-animation/basic-animation.component';
 
 
 @NgModule({
   declarations: [
-    AnimationsComponent
+    AnimationsComponent,
+    BasicAnimationComponent
   ],
   imports: [
     CommonModule,

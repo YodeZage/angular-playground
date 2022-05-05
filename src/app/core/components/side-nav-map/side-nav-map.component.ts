@@ -16,7 +16,7 @@ export class SideNavMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    this.sideNavMapList = this.sideNavMapList;
   }
 
 }

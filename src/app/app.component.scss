@@ -1,6 +1,60 @@
-.grid-container-full {
-  display: grid;
-  height: calc(100vh - 60px);
-  grid-template-rows: auto 100px;
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+.page-header {
+  flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.page-body {
+  flex: 1 1 auto;
+}
+
+.page-footer {
+  flex: 0 0 auto;
+}
+
+
+
+/** This is second way to apply same layout without using any framework
+.page-container2 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-header2 {
+  flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.page-body2 {
+  flex: 1 1 auto;
+  position: relative;
+
+  .side-nav2 {
+    width: 240px;
+    border-right: 1px solid rgba(0,0,0,.12);
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .body-content2 {
+    margin-left: 241px;
+  }
+}
+
+.page-footer2 {
+  flex: 0 0 auto;
+}
+*/
