@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+import { INavMap } from '@ap/shared/interfaces/nav-map';
+import { FullNavList } from '@ap/shared/static-values/nav-list';
 
 @Component({
   selector: 'ap-animations',
@@ -14,9 +9,12 @@ import {
 })
 export class AnimationsComponent implements OnInit {
 
+  animationSubNavList?: INavMap[];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.animationSubNavList = FullNavList.get("Animation")?.subPath;
   }
 
 }

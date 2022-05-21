@@ -3,10 +3,12 @@
 
   <mat-sidenav-container class="page-body" [hasBackdrop]="isXSmall">
     <mat-sidenav #drawer [mode]="sideNavMode" [opened]="!isXSmall">
-      <ap-side-nav-map [sideNavMapList]="navMapList"></ap-side-nav-map>
+      <ap-side-nav-map [fullSideNavMapList]="fullNavMapList"></ap-side-nav-map>
     </mat-sidenav>
     <mat-sidenav-content>
-      <router-outlet></router-outlet>
+      <div class="main-container">
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 

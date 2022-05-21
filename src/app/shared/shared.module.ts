@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import {LayoutModule} from '@angular/cdk/layout';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {LayoutModule} from '@angular/cdk/layout';
     MatRippleModule,
     MatCardModule,
     LayoutModule,
+    MatChipsModule
   ],
   exports: [
     RouterModule,
@@ -33,6 +35,7 @@ import {LayoutModule} from '@angular/cdk/layout';
     MatRippleModule,
     MatCardModule,
     LayoutModule,
+    MatChipsModule
   ]
 })
 export class SharedModule { }

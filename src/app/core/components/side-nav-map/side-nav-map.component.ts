@@ -9,14 +9,13 @@ import {INavMap} from '@ap/shared/interfaces/nav-map';
 })
 export class SideNavMapComponent implements OnInit {
 
-  @Input() sideNavMapList: INavMap[];
+  @Input() fullSideNavMapList: Map<string, INavMap>;
 
   rippleColor = "#0000000a";
 
   constructor() { }
 
   ngOnInit(): void {
-    this.sideNavMapList = this.sideNavMapList;
   }
 
 }

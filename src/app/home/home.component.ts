@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { NavList } from "@ap/shared/static-values/nav-list";
+import { FullNavList } from "@ap/shared/static-values/nav-list";
+import { INavMap } from "@ap/shared/interfaces/nav-map";
 
 @Component({
   selector: 'ap-home',
@@ -9,7 +10,7 @@ import { NavList } from "@ap/shared/static-values/nav-list";
 })
 export class HomeComponent implements OnInit {
 
-  navMapList = NavList;
+  fullNavMapList: Map<string, INavMap> = FullNavList;
 
   constructor() { }
 

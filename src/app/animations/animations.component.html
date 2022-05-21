@@ -1,3 +1,9 @@
-<div class="nav-box"><a routerLink="basic">Basic</a></div>
+<mat-chip-list aria-label="Section shortcut">
+  <mat-chip *ngFor="let subNav of animationSubNavList" class="chip-container">
+    <a class="chip-link" routerLink="{{subNav.path}}">{{subNav.name}}</a>
+  </mat-chip>
+</mat-chip-list>
 
-<router-outlet></router-outlet>
+<div class="body-container">
+  <router-outlet></router-outlet>
+</div>
