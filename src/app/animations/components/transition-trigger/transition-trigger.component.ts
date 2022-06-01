@@ -67,14 +67,23 @@ import {animate, query, stagger, state, style, transition, trigger} from "@angul
       ]),
     ]),
 
+
+    //Boolean Value
+    trigger('trueFalse', [
+      state('true', style({ height: '*' })),
+      state('false', style({ height: '100px' })),
+      transition('false <=> true', animate(500))
+    ])
+
   ]
 })
 export class TransitionTriggerComponent implements OnInit {
 
   isOpen: boolean = true;
   isShown: boolean = true;
-  exampleNumber: number = -1;
+  exampleNumber: number = 0;
   testData: any[] = [];
+  isTrue: boolean = true;
 
   constructor() { }
 
@@ -97,17 +106,10 @@ export class TransitionTriggerComponent implements OnInit {
       this.exampleNumber--;
       this.testData.pop();
     }
+  }
 
-
-    // if (this.exampleNumber !== this.testData.length) {
-    //   this.exampleNumber = this.testData.length;
-    //   this.testData.push({name: 123});
-    // } else {
-    //   this.exampleNumber = -1;
-    //   this.testData.pop();
-    // }
-
-    console.log(this.testData);
+  toggleTrueFalse(): void {
+    this.isTrue = !this.isTrue;
   }
 
 

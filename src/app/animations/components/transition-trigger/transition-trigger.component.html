@@ -9,7 +9,7 @@
       <button (click)="toggle()">Toggle Open/Close</button>
     </nav>
 
-    <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+    <div [@openClose]="isOpen ? 'open' : 'closed'" class="effect-container">
       <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
     </div>
   </mat-card-content>
@@ -27,7 +27,7 @@
       <button (click)="insertRemoveToggle()">Toggle Insert/Remove</button>
     </nav>
 
-    <div @myInsertRemoveTrigger *ngIf="isShown" class="insert-remove-container">
+    <div @myInsertRemoveTrigger *ngIf="isShown" class="effect-container">
       <p>The box is inserted</p>
     </div>
   </mat-card-content>
@@ -45,9 +45,27 @@
       <button (click)="increaseDecreaseToggle('D')">Decrease Number</button>
     </nav>
 
-    <div [@filterAnimation]="exampleNumber" class="increase-decrease-container">
+    <div [@filterAnimation]="exampleNumber" class="effect-container">
       <p>The number is changed to {{exampleNumber}}</p>
       <div *ngFor="let n of testData">{{n.name}}</div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="section-card">
+  <mat-card-title>Boolean Value</mat-card-title>
+  <mat-card-subtitle>
+    If a trigger contains a boolean value as a binding value, then this value can be
+    matched using a transition() expression that compares true and false, or 1 and 0.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleTrueFalse()">Toggle True/False</button>
+    </nav>
+
+    <div [@trueFalse]="isTrue ? true : false" class="effect-container">
+      <p>The value is now {{ isTrue ? 'True' : 'False' }}!</p>
     </div>
   </mat-card-content>
 </mat-card>
