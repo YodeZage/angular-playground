@@ -69,3 +69,96 @@
     </div>
   </mat-card-content>
 </mat-card>
+
+
+<mat-card class="section-card">
+  <mat-card-title>Parent Child</mat-card-title>
+  <mat-card-subtitle>
+    The parent animation always gets priority and child animations are blocked.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleDisable()">Toggle Disable</button>
+      <button (click)="toggleIsRunning()">Toggle Running</button>
+    </nav>
+
+    <div [@.disabled]="isDisabled">
+      <div [@runningAnimation]="isRunning ? true : false" class="effect-container">
+        <p *ngIf="isDisabled">Disabled!</p>
+        <p>The value is now {{ isRunning ? 'True' : 'False' }}!</p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="section-card">
+  <mat-card-title>Animation Callback</mat-card-title>
+  <mat-card-subtitle>
+    The animation trigger() function emits callbacks when it starts and when it finishes.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleCallback()">Toggle Callback</button>
+    </nav>
+
+    <div [@callBack]="isCallback ? true : false" class="effect-container"
+         (@callBack.start)="onAnimationEvent($event)"
+         (@callBack.done)="onAnimationEvent($event)">
+      <p>The value is now {{ isCallback ? 'True' : 'False' }}!</p>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="section-card">
+  <mat-card-title>Keyframes</mat-card-title>
+  <mat-card-subtitle>
+    The keyframe() function is similar to keyframes in CSS.
+    Keyframes allow several style changes within a single timing segment.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleKeyframes()">Toggle Keyframes</button>
+    </nav>
+
+    <div [@keyframes]="isKeyframes ? 'start' : 'end'" class="effect-container">
+      <p>The value is now {{ isKeyframes ? 'True' : 'False' }}!</p>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="section-card">
+  <mat-card-title>Offset</mat-card-title>
+  <mat-card-subtitle>
+    offsets are relative measures from 0 to 1, marking the beginning and end of the animation,
+    respectively and should be applied to each of the keyframe's steps if used at least once.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleOffset()">Toggle Offset</button>
+    </nav>
+
+    <div [@offset]="isOffset ? 'active' : 'inactive'" class="effect-container">
+      <p>The value is now {{ isOffset ? 'True' : 'False' }}!</p>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="section-card">
+  <mat-card-title>Pulsation</mat-card-title>
+  <mat-card-subtitle>
+    Use keyframes to create a pulse effect in your animations by defining styles at specific offset throughout the animation.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="togglePulsation()">Toggle Pulsation</button>
+    </nav>
+
+    <div [@pulsation]="isPulsation ? 'open' : 'close'" class="effect-container">
+      <p>The value is now {{ isPulsation ? 'True' : 'False' }}!</p>
+    </div>
+  </mat-card-content>
+</mat-card>
