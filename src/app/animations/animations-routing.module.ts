@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnimationsComponent} from "./animations.component";
 import { BasicAnimationComponent } from './components/basic-animation/basic-animation.component';
 import { TransitionTriggerComponent } from './components/transition-trigger/transition-trigger.component';
+import { ComplexSequencesComponent } from './components/complex-sequences/complex-sequences.component';
 
 const routes: Routes = [
   { path: '',
@@ -11,6 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'basic', component: BasicAnimationComponent },
       { path: 'transition-trigger', component: TransitionTriggerComponent },
+      { path: 'complex-sequences', component: ComplexSequencesComponent },
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }

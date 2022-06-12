@@ -9,7 +9,8 @@ export const FullNavList: Map<string, INavMap> = new Map<string, INavMap>([
       description: "Make a website vivid with CSS transaction and animation",
       subPath: [
         {name: "Basic", path: "basic"},
-        {name: "Transitions and Triggers", path: "transition-trigger"}
+        {name: "Transitions and Triggers", path: "transition-trigger"},
+        {name: "Complex Animation Sequences", path: "complex-sequences"}
       ]
     }
   ]

@@ -1,0 +1,91 @@
+<mat-card class="section-card">
+  <mat-card-title>Query Function</mat-card-title>
+  <mat-card-subtitle>
+    query() helps us finds one or more inner elements within the current element
+    that is being animated within a sequence. Use with animate().
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleQuery()">Toggle Show/Hide</button>
+    </nav>
+
+    <div [@queryAnimation]="queryFlag" class="effect-container">
+      <h5>Title</h5>
+      <div class="query-content">
+        Now the value is {{queryFlag}}
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="section-card">
+  <mat-card-title>Stagger Function</mat-card-title>
+  <mat-card-subtitle>
+    Use within an animation query() call to issue a timing gap after each queried item is animated.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleStagger()">Toggle Open/Close</button>
+    </nav>
+
+    <div [@listAnimation]="staggerItems.length" class="effect-container">
+      <div *ngFor="let item of staggerItems">
+        {{ item }}
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="section-card">
+  <mat-card-title>Group Function</mat-card-title>
+  <mat-card-subtitle>
+    If we need to run more than one animates at the same time for one state, we can use group function.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleGroup()">Toggle Enter/Leave</button>
+    </nav>
+
+    <div [@groupInOut]="'in'" class="group-content" *ngIf="groupString === 'I am entering'">
+      The status now is {{groupString}}
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="section-card">
+  <mat-card-title>Sequential Function</mat-card-title>
+  <mat-card-subtitle>
+    If we need to run more than one animates one after another for one state, we can use sequential function.
+  </mat-card-subtitle>
+  <mat-card-content>
+    <nav>
+      <button (click)="toggleSequence()">Toggle Enter/Leave</button>
+    </nav>
+
+    <div [@sequentialInOut]="'in'" class="group-content" *ngIf="sequenceString === 'I am entering'">
+      The status now is {{sequenceString}}
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="section-card fixed-height-card">
+  <mat-card-title>Filter Example</mat-card-title>
+  <mat-card-subtitle>
+    Practice examples
+  </mat-card-subtitle>
+  <mat-card-content>
+    <label for="search">Search heroes: </label>
+    <input type="text" id="search" #criteria
+           (input)="updateCriteria(criteria.value)"
+           placeholder="Search heroes">
+
+    <ul class="heroes" [@filterAnimation]="heroesTotal">
+      <li *ngFor="let hero of heroes" class="hero">
+        <div class="inner">
+          <span class="badge">{{ hero.id }}</span>
+          <span class="name">{{ hero.name }}</span>
+        </div>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

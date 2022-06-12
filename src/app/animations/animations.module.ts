@@ -5,6 +5,7 @@ import { AnimationsRoutingModule } from './animations-routing.module';
 import { AnimationsComponent } from './animations.component';
 import { BasicAnimationComponent } from './components/basic-animation/basic-animation.component';
 import { TransitionTriggerComponent } from './components/transition-trigger/transition-trigger.component';
+import { ComplexSequencesComponent } from './components/complex-sequences/complex-sequences.component';
 import { SharedModule } from '@ap/shared/shared.module';
 
 
@@ -12,7 +13,8 @@ import { SharedModule } from '@ap/shared/shared.module';
   declarations: [
     AnimationsComponent,
     BasicAnimationComponent,
-    TransitionTriggerComponent
+    TransitionTriggerComponent,
+    ComplexSequencesComponent
   ],
   imports: [
     CommonModule,
