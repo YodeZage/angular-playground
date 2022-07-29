@@ -10,7 +10,8 @@ export const FullNavList: Map<string, INavMap> = new Map<string, INavMap>([
       subPath: [
         {name: "Basic", path: "basic"},
         {name: "Transitions and Triggers", path: "transition-trigger"},
-        {name: "Complex Animation Sequences", path: "complex-sequences"}
+        {name: "Complex Animation Sequences", path: "complex-sequences"},
+        {name: "Reusable Animations", path: "reusable-animation"}
       ]
     }
   ]

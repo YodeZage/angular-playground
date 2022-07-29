@@ -6,6 +6,7 @@ import { AnimationsComponent } from './animations.component';
 import { BasicAnimationComponent } from './components/basic-animation/basic-animation.component';
 import { TransitionTriggerComponent } from './components/transition-trigger/transition-trigger.component';
 import { ComplexSequencesComponent } from './components/complex-sequences/complex-sequences.component';
+import { ReusableAnimationComponent } from './components/reusable-animation/reusable-animation.component';
 import { SharedModule } from '@ap/shared/shared.module';
 
 
@@ -14,7 +15,8 @@ import { SharedModule } from '@ap/shared/shared.module';
     AnimationsComponent,
     BasicAnimationComponent,
     TransitionTriggerComponent,
-    ComplexSequencesComponent
+    ComplexSequencesComponent,
+    ReusableAnimationComponent
   ],
   imports: [
     CommonModule,
