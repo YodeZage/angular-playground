@@ -12,159 +12,141 @@ import {
 } from "@angular/animations";
 
 @Component({
-  selector: 'ap-transition-trigger',
-  templateUrl: './transition-trigger.component.html',
-  styleUrls: ['./transition-trigger.component.scss'],
-  animations: [
-    // Multiple Transition
-    trigger('openClose', [
-      state('open', style({
-        height: '200px',
-        opacity: 1,
-        backgroundColor: 'cornflowerblue'
-      })),
-      state('closed', style({
-        height: '100px',
-        opacity: 0.8,
-        backgroundColor: 'cadetblue'
-      })),
-      transition('open => closed', [
-        animate('1s')
-      ]),
-      transition('closed => open', [
-        animate('0.5s')
-      ]),
-      // this state transition are replaced by above transition
-      transition('* => closed', [
-        style({ opacity: 0 }),
-        animate('5s', style({ opacity: 1 })),
-      ]),
-    ]),
-
-
-    //Entering and Leaving
-    //this example doesn't need to use state()
-    trigger('myInsertRemoveTrigger', [
-      // ':enter' is alias for void => *
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('2s', style({ opacity: 1 })),
-      ]),
-      // ':leave' is alias for * => void
-      transition(':leave', [
-        animate('1s', style({ opacity: 0 }))
-      ])
-    ]),
-
-
-    //Number Value
-    trigger('filterAnimation', [
-      transition(':enter, * => 0, * => -1', []),
-      transition(':increment', [
-        query(':enter', [
-          style({ opacity: 0, width: 0 }),
-          stagger(50, [
-            animate('1s ease-out', style({ opacity: 1, width: '*' })),
-          ]),
-        ], { optional: true })
-      ]),
-      transition(':decrement', [
-        query(':leave', [
-          stagger(50, [
-            animate('1s ease-out', style({ opacity: 0, width: 0 })),
-          ]),
-        ])
-      ]),
-    ]),
-
-
-    //Boolean Value
-    trigger('trueFalse', [
-      state('true', style({ height: '*' })),
-      state('false', style({ height: '100px' })),
-      transition('false <=> true', animate(500))
-    ]),
-
-
-    //Parent Child
-    trigger('runningAnimation', [
-      state('true', style({ height: '*' })),
-      state('false', style({ height: '100px' })),
-      transition('false <=> true', animate(500))
-    ]),
-
-
-    //Animation Callback
-    trigger('callBack', [
-      state('true', style({ height: '*' })),
-      state('false', style({ height: '100px' })),
-      transition('false <=> true', animate(2000))
-    ]),
-
-
-    //Keyframes
-    trigger('keyframes', [
-      transition('start => end', [
-        animate('2s', keyframes([
-          style({ backgroundColor: 'blue' }),
-          style({ backgroundColor: 'red' }),
-          style({ backgroundColor: 'orange' })
-        ]))
-      ]),
-      transition('end => start', [
-        animate('3s', keyframes([
-          style({ backgroundColor: 'orange' }),
-          style({ backgroundColor: 'red' }),
-          style({ backgroundColor: 'blue' })
-        ]))
-      ])
-    ]),
-
-
-    //Offset
-    trigger('offset', [
-      transition('inactive => active', [
-        animate('2s', keyframes([
-          style({ height: '*', offset: 0}),
-          style({ height: '100px', offset: 0.9}),
-          style({ height: '200px', offset: 1.0})
-        ])),
-      ]),
-      transition('active => inactive', [
-        animate('3s', keyframes([
-          style({ height: '200px', offset: 0}),
-          style({ height: '100px', offset: 0.1}),
-          style({ height: '*', offset: 1.0})
-        ]))
-      ])
-    ]),
-
-
-    //Pulsation
-    trigger('pulsation', [
-      state('open', style({
-        height: '200px',
-        opacity: 1,
-        backgroundColor: 'yellow'
-      })),
-      state('close', style({
-        height: '100px',
-        opacity: 0.5,
-        backgroundColor: 'green'
-      })),
-      transition('open <=> close', [
-        animate('2s', keyframes ( [
-          style({ opacity: 0.1, offset: 0.1 }),
-          style({ opacity: 0.6, offset: 0.2 }),
-          style({ opacity: 1,   offset: 0.5 }),
-          style({ opacity: 0.2, offset: 0.7 })
-        ]))
-      ])
-    ]),
-
-
-
-  ]
+    selector: 'ap-transition-trigger',
+    templateUrl: './transition-trigger.component.html',
+    styleUrls: ['./transition-trigger.component.scss'],
+    animations: [
+        // Multiple Transition
+        trigger('openClose', [
+            state('open', style({
+                height: '200px',
+                opacity: 1,
+                backgroundColor: 'cornflowerblue'
+            })),
+            state('closed', style({
+                height: '100px',
+                opacity: 0.8,
+                backgroundColor: 'cadetblue'
+            })),
+            transition('open => closed', [
+                animate('1s')
+            ]),
+            transition('closed => open', [
+                animate('0.5s')
+            ]),
+            // this state transition are replaced by above transition
+            transition('* => closed', [
+                style({ opacity: 0 }),
+                animate('5s', style({ opacity: 1 })),
+            ]),
+        ]),
+        //Entering and Leaving
+        //this example doesn't need to use state()
+        trigger('myInsertRemoveTrigger', [
+            // ':enter' is alias for void => *
+            transition(':enter', [
+                style({ opacity: 0 }),
+                animate('2s', style({ opacity: 1 })),
+            ]),
+            // ':leave' is alias for * => void
+            transition(':leave', [
+                animate('1s', style({ opacity: 0 }))
+            ])
+        ]),
+        //Number Value
+        trigger('filterAnimation', [
+            transition(':enter, * => 0, * => -1', []),
+            transition(':increment', [
+                query(':enter', [
+                    style({ opacity: 0, width: 0 }),
+                    stagger(50, [
+                        animate('1s ease-out', style({ opacity: 1, width: '*' })),
+                    ]),
+                ], { optional: true })
+            ]),
+            transition(':decrement', [
+                query(':leave', [
+                    stagger(50, [
+                        animate('1s ease-out', style({ opacity: 0, width: 0 })),
+                    ]),
+                ])
+            ]),
+        ]),
+        //Boolean Value
+        trigger('trueFalse', [
+            state('true', style({ height: '*' })),
+            state('false', style({ height: '100px' })),
+            transition('false <=> true', animate(500))
+        ]),
+        //Parent Child
+        trigger('runningAnimation', [
+            state('true', style({ height: '*' })),
+            state('false', style({ height: '100px' })),
+            transition('false <=> true', animate(500))
+        ]),
+        //Animation Callback
+        trigger('callBack', [
+            state('true', style({ height: '*' })),
+            state('false', style({ height: '100px' })),
+            transition('false <=> true', animate(2000))
+        ]),
+        //Keyframes
+        trigger('keyframes', [
+            transition('start => end', [
+                animate('2s', keyframes([
+                    style({ backgroundColor: 'blue' }),
+                    style({ backgroundColor: 'red' }),
+                    style({ backgroundColor: 'orange' })
+                ]))
+            ]),
+            transition('end => start', [
+                animate('3s', keyframes([
+                    style({ backgroundColor: 'orange' }),
+                    style({ backgroundColor: 'red' }),
+                    style({ backgroundColor: 'blue' })
+                ]))
+            ])
+        ]),
+        //Offset
+        trigger('offset', [
+            transition('inactive => active', [
+                animate('2s', keyframes([
+                    style({ height: '*', offset: 0 }),
+                    style({ height: '100px', offset: 0.9 }),
+                    style({ height: '200px', offset: 1.0 })
+                ])),
+            ]),
+            transition('active => inactive', [
+                animate('3s', keyframes([
+                    style({ height: '200px', offset: 0 }),
+                    style({ height: '100px', offset: 0.1 }),
+                    style({ height: '*', offset: 1.0 })
+                ]))
+            ])
+        ]),
+        //Pulsation
+        trigger('pulsation', [
+            state('open', style({
+                height: '200px',
+                opacity: 1,
+                backgroundColor: 'yellow'
+            })),
+            state('close', style({
+                height: '100px',
+                opacity: 0.5,
+                backgroundColor: 'green'
+            })),
+            transition('open <=> close', [
+                animate('2s', keyframes([
+                    style({ opacity: 0.1, offset: 0.1 }),
+                    style({ opacity: 0.6, offset: 0.2 }),
+                    style({ opacity: 1, offset: 0.5 }),
+                    style({ opacity: 0.2, offset: 0.7 })
+                ]))
+            ])
+        ]),
+    ],
+    standalone: false
 })
 export class TransitionTriggerComponent implements OnInit {
   // Below 2 line can disable all animation for the entire component

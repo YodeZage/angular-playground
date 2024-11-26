@@ -3,9 +3,10 @@ import {Component, Input, OnInit} from '@angular/core';
 import { INavMap } from "@ap/shared/interfaces/nav-map";
 
 @Component({
-  selector: 'ap-nav-card',
-  templateUrl: './nav-card.component.html',
-  styleUrls: ['./nav-card.component.scss']
+    selector: 'ap-nav-card',
+    templateUrl: './nav-card.component.html',
+    styleUrls: ['./nav-card.component.scss'],
+    standalone: false
 })
 export class NavCardComponent implements OnInit {
 

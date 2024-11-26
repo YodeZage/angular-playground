@@ -3,9 +3,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import {INavMap} from '@ap/shared/interfaces/nav-map';
 
 @Component({
-  selector: 'ap-side-nav-map',
-  templateUrl: './side-nav-map.component.html',
-  styleUrls: ['./side-nav-map.component.scss']
+    selector: 'ap-side-nav-map',
+    templateUrl: './side-nav-map.component.html',
+    styleUrls: ['./side-nav-map.component.scss'],
+    standalone: false
 })
 export class SideNavMapComponent implements OnInit {
 

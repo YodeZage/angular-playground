@@ -1,9 +1,10 @@
 import {Component, EventEmitter, Output , OnInit} from '@angular/core';
 
 @Component({
-  selector: 'ap-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'ap-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    standalone: false
 })
 export class HeaderComponent implements OnInit {
 
